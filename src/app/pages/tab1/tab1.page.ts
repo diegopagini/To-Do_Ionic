@@ -10,7 +10,11 @@ import { DeseosService } from 'src/app/services/deseos.service';
 	styleUrls: ['tab1.page.scss'],
 })
 export class Tab1Page {
-	constructor(public deseosService: DeseosService, private router: Router, private alertCtrl: AlertController) {}
+	constructor(
+		public deseosService: DeseosService,
+		private router: Router,
+		private alertCtrl: AlertController
+	) {}
 
 	async agregarLista() {
 		const alert = await this.alertCtrl.create({
@@ -44,9 +48,5 @@ export class Tab1Page {
 			],
 		});
 		alert.present();
-	}
-
-	listaSeleccionada(lista: Lista) {
-		this.router.navigateByUrl(`/tabs/tab1/agregar/${lista.id}`);
 	}
 }
